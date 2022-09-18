@@ -9,6 +9,7 @@ import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 import { getFCP, getTTFB } from 'web-vitals';
 import ttiPolyfill from 'tti-polyfill';
+import sendMetrics from './SendMetrics';
 
 //ttiPolyfill Snippet
 if ('PerformanceLongTaskTiming' in window) {
@@ -28,18 +29,22 @@ root.render(
 
 setTimeout(function () {
     //Metrics
-    getFCP(console.log);
-    getTTFB(console.log);
+    getFCP((fcp) => {
+        sendMetrics('ReactApp_FCP', fcp.value.toString());
+    });
+    getTTFB((ttfb) => {
+        sendMetrics('ReactApp_TTFB', ttfb.value.toString());
+    });
 
     ttiPolyfill.getFirstConsistentlyInteractive().then((tti) => {
-        console.log('TTI ' + tti);
+        sendMetrics('ReactApp_TTI', tti.toString());
     });
 
     const loadTime = window.performance.timing.domContentLoadedEventEnd - window.performance.timing.navigationStart;
-    console.log('loadtime ' + loadTime);
+    sendMetrics('ReactApp_Load_Time', loadTime.toString());
 
     const domainLookup = window.performance.timing.domainLookupEnd - window.performance.timing.domainLookupStart;
-    console.log('domainLookup ' + domainLookup);
+    sendMetrics('ReactApp_DNSLookup', domainLookup.toString());
 }, 0);
 
 serviceWorkerRegistration.unregister();
