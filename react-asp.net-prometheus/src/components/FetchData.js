@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import sendMetrics from '.././SendMetrics';
 
 export class FetchData extends Component {
     static displayName = FetchData.name;

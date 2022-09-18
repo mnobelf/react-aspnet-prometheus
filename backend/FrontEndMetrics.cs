@@ -44,7 +44,7 @@ namespace backend.FrontEndMetrics
             Metrics.CreateHistogram("ReactApp_Memmory_Usage", "Total allocated heap size, in bytes",
                 new HistogramConfiguration
                 {
-                    Buckets = Histogram.LinearBuckets(start: 200, width: 200, count: 10)
+                    Buckets = Histogram.LinearBuckets(start: 14000000, width: 2000000, count: 10)
                 });
     }
 }
