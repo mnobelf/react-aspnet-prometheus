@@ -9,7 +9,11 @@ export class FetchData extends Component {
     }
 
     componentDidMount() {
-        this.populateWeatherData();
+        const before = Date.now();
+        this.populateWeatherData().then(() => {
+            const after = Date.now();
+            sendMetrics('ReactApp_Fetch_Time', (after - before).toString());
+        });
     }
 
     static renderForecastsTable(forecasts) {

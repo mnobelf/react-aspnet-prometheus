@@ -45,6 +45,9 @@ setTimeout(function () {
 
     const domainLookup = window.performance.timing.domainLookupEnd - window.performance.timing.domainLookupStart;
     sendMetrics('ReactApp_DNSLookup', domainLookup.toString());
+
+    const memory = window.performance.memory.totalJSHeapSize;
+    sendMetrics('ReactApp_Memory_Usage', memory.toString());
 }, 0);
 
 serviceWorkerRegistration.unregister();
