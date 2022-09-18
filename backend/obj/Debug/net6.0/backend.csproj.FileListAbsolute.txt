@@ -25,3 +25,6 @@ C:\Users\mnfau\source\repos\react-asp.net-prometheus\backend\obj\Debug\net6.0\re
 C:\Users\mnfau\source\repos\react-asp.net-prometheus\backend\obj\Debug\net6.0\backend.pdb
 C:\Users\mnfau\source\repos\react-asp.net-prometheus\backend\obj\Debug\net6.0\backend.genruntimeconfig.cache
 C:\Users\mnfau\source\repos\react-asp.net-prometheus\backend\obj\Debug\net6.0\ref\backend.dll
+C:\Users\mnfau\source\repos\react-asp.net-prometheus\backend\bin\Debug\net6.0\Prometheus.NetCore.dll
+C:\Users\mnfau\source\repos\react-asp.net-prometheus\backend\bin\Debug\net6.0\Prometheus.NetStandard.dll
+C:\Users\mnfau\source\repos\react-asp.net-prometheus\backend\bin\Debug\net6.0\Prometheus.AspNetCore.dll
